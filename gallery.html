@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon-32x32.png" />
+    <title>GALLERY PAGE</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Atma"
+      rel="stylesheet"
+    />
+    <style>
+      .heading {
+        text-align: center;
+        text-shadow: 5px 2px 5px #3e00ff;
+        font-variant-caps: petite-caps;
+        font-size: 50px;
+        background-color: #e4d8dc;
+        font-family: "Atma";
+        font-size: 22px;
+      }
+      body {
+        background-color: #acffad;
+      }
+      img {
+        width: 300px;
+        height: 400px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      p {
+        background-color: aquamarine;
+        font-family: "Autour One";
+        font-size: 22px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 20px;
+        column-gap: 20px;
+      }
+      .grid2 {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 400px);
+        grid-template-rows: repeat(22, 15vw);
+        grid-gap: 10px !important;
+        padding: 5px 5px;
+        
+
+      }
+      .gallery__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .gallery__item--1
+      {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          grid-row-start: 1;
+          grid-row-end:3 ;
+      }
+      .gallery__item--2
+      {
+          grid-column-start:3;
+          grid-column-end:5;
+          grid-row-start:1;
+          grid-row-end:4;
+      }
+      .gallery__item--3
+      {
+          grid-column-start:5;
+          grid-column-end:9;
+          grid-row-start:1;
+          grid-row-end:3;
+      }
+      .gallery__item--4
+      {
+          grid-column-start:1;
+          grid-column-end:3;
+          grid-row-start:4;
+          grid-row-end:8;
+      }
+      .gallery__item--5
+      {
+          grid-column-start:3;
+          grid-column-end:7;
+          grid-row-start:4;
+          grid-row-end:10;
+      }
+      .gallery__item--6
+      {
+          grid-column-start:7;
+          grid-column-end:9;
+          grid-row-start:4;
+          grid-row-end:9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heading">
+      <h1 style="color: #f43b86">GALLERY PAGE</h1>
+    </div>
+    <p style="font-size: xx-large; color: #7c83fd; text-align: center">
+      This is the list of all the dogs that are in our shop.
+    </p>
+    <div class="grid">
+      <div class="img1">
+        <img src="dog5.jpg" class="center" />
+        <p
+          style="
+            font-weight: bold;
+            background-color: #fb7afc;
+            color: black;
+            text-align: center;
+          "
+        >
+          PRICE=$100
+        </p>
+      </div>
+      <div class="img2">
+        <img src="dog6.jpg" class="center" />
+        <p
+          style="
+            font-weight: bold;
+            background-color: #7dedff;
+            color: black;
+            text-align: center;
+          "
+        >
+          PRICE=$150
+        </p>
+      </div>
+      <div class="img3">
+        <img src="dog7.jpg" class="center" />
+        <p
+          style="
+            font-weight: bold;
+            background-color: #fdd2bf;
+            color: black;
+            text-align: center;
+          "
+        >
+          PRICE=$110
+        </p>
+      </div>
+      <div class="img4">
+        <img src="dog8.jpg" class="center" />
+        <p
+          style="
+            font-weight: bold;
+            background-color: #78dec7;
+            color: black;
+            text-align: center;
+          "
+        >
+          PRICE=$90
+        </p>
+      </div>
+      <div class="img5">
+        <img src="dog9.jpg" class="center" />
+        <p
+          style="
+            font-weight: bold;
+            background-color: #e8f6ef;
+            color: black;
+            text-align: center;
+          "
+        >
+          PRICE=$200
+        </p>
+      </div>
+      <div class="img6">
+        <img src="dog10.jpg" class="center" />
+        <p
+          style="
+            font-weight: bold;
+            background-color: #f7dbf0;
+            color: black;
+            text-align: center;
+          "
+        >
+          PRICE=$300
+        </p>
+      </div>
+     
+    </div>
+
+    <br>
+    <div class="grid2">
+        <figure class="gallery__item gallery__item--1">
+          <img
+            src="https://cdn2.thedogapi.com/images/BJa4kxc4X.jpg"
+            class="gallery__img"
+            alt="Image 1"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--2">
+          <img
+            src="https://cdn2.thedogapi.com/images/hMyT4CDXR.jpg"
+            class="gallery__img"
+            alt="Image 2"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--3">
+          <img
+            src="https://cdn2.thedogapi.com/images/rkiByec47.jpg"
+            class="gallery__img"
+            alt="Image 3"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--4">
+          <img
+            src="https://cdn2.thedogapi.com/images/dW5UucTIW.jpg"
+            class="gallery__img"
+            alt="Image 4"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--5">
+          <img
+            src="https://cdn2.thedogapi.com/images/pk1AAdloG.jpg"
+            class="gallery__img"
+            alt="Image 5"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--6">
+          <img
+            src="https://cdn2.thedogapi.com/images/sqQJDtbpY.jpg"
+            class="gallery__img"
+            alt="Image 6"
+          />
+        </figure>
+      </div>
+    <script>
+      fetch("https://api.thedogapi.com/v1/breeds")
+        .then((resp) => resp.json())
+        .then((data) => {
+          data.forEach((element, i) => {
+            var fig = ` <figure class="gallery__item">
+<img
+  src="${element.image.url}"
+  class="gallery__img"
+  alt="Image 6"
+/>
+</figure>`;
+            document.querySelector(".grid2").innerHTML += fig;
+          });
+        })
+        .catch((err) => console.log(err));
+    </script>
+  </body>
+</html>

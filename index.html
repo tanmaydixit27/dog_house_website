@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon-32x32.png" />
+    <title>DOG HOUSE</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
+
+      * {
+        margin: 0%;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: grid;
+        grid-template-columns: 16rem auto;
+        overflow: hidden;
+      }
+      .nav {
+        width: 16rem;
+        height: 100vh;
+        /* border: 1px solid red; */
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+        row-gap: 20px;
+        padding: 10px 0px;
+        background-color: #f72585;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      }
+      .heading,
+      .nav-item {
+        text-align: center;
+        /* border: 1px solid black; */
+        height: 2.7rem;
+        width: 100%;
+        font-family: "Rampart One", cursive;
+      }
+
+      .heading {
+        border: none;
+        font-family: "Rampart One", cursive;
+      }
+      a {
+        text-decoration: none;
+        font-size: 25px;
+        text-transform: uppercase;
+        color: white;
+        margin-top: 20px;
+        transition: 0.4s;
+      }
+      a:hover {
+        color: black !important;
+      }
+
+      .content {
+          width: 100%;
+          height: 100vh;
+          overflow: scroll;
+      }
+      .grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(22, 5vw);
+        grid-gap: 10px !important;
+        padding: 5px 5px;
+        
+
+      }
+      .gallery__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .gallery__item--1
+      {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          grid-row-start: 1;
+          grid-row-end:3 ;
+      }
+      .gallery__item--2
+      {
+          grid-column-start:3;
+          grid-column-end:5;
+          grid-row-start:1;
+          grid-row-end:4;
+      }
+      .gallery__item--3
+      {
+          grid-column-start:5;
+          grid-column-end:9;
+          grid-row-start:1;
+          grid-row-end:3;
+      }
+      .gallery__item--4
+      {
+          grid-column-start:1;
+          grid-column-end:3;
+          grid-row-start:4;
+          grid-row-end:8;
+      }
+      .gallery__item--5
+      {
+          grid-column-start:3;
+          grid-column-end:7;
+          grid-row-start:4;
+          grid-row-end:10;
+      }
+      .gallery__item--6
+      {
+          grid-column-start:7;
+          grid-column-end:9;
+          grid-row-start:4;
+          grid-row-end:9;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="heading">
+        <h1>Dog House🐶</h1>
+      </div>
+      <div class="nav-item">
+        <a href="home.html">HOME</a>
+      </div>
+      <div class="nav-item">
+        <a href="about.html" target="_blank">ABOUT</a>
+      </div>
+      <div class="nav-item">
+        <a href="gallery.html" target="_blank">GALLARY</a>
+      </div>
+      <div class="nav-item">
+        <a href="Contact.html">CONTACT~US</a>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- <img style="width: 100%;" src="https://i.pinimg.com/originals/83/50/1c/83501c23f79bdada01de16310e532b26.gif" alt="">
+        <h1>HOME</h1> -->
+      <div class="grid">
+        <figure class="gallery__item gallery__item--1">
+          <img
+            src="https://cdn2.thedogapi.com/images/BJa4kxc4X.jpg"
+            class="gallery__img"
+            alt="Image 1"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--2">
+          <img
+            src="https://cdn2.thedogapi.com/images/hMyT4CDXR.jpg"
+            class="gallery__img"
+            alt="Image 2"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--3">
+          <img
+            src="https://cdn2.thedogapi.com/images/rkiByec47.jpg"
+            class="gallery__img"
+            alt="Image 3"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--4">
+          <img
+            src="https://cdn2.thedogapi.com/images/dW5UucTIW.jpg"
+            class="gallery__img"
+            alt="Image 4"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--5">
+          <img
+            src="https://cdn2.thedogapi.com/images/pk1AAdloG.jpg"
+            class="gallery__img"
+            alt="Image 5"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--6">
+          <img
+            src="https://cdn2.thedogapi.com/images/sqQJDtbpY.jpg"
+            class="gallery__img"
+            alt="Image 6"
+          />
+        </figure>
+      </div>
+    </div>
+
+    <script>
+        
+      fetch('https://api.thedogapi.com/v1/breeds').then((resp)=>resp.json()).then((data)=>{
+
+          data.forEach((element,i) => {
+                var fig=` <figure class="gallery__item">
+          <img
+            src="${element.image.url}"
+            class="gallery__img"
+            alt="Image 6"
+          />
+        </figure>`;
+        document.querySelector(".grid").innerHTML+=fig;
+          });
+
+
+        }).catch((err)=>console.log(err));
+
+    </script>
+  </body>
+</html>
